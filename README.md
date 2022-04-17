@@ -16,7 +16,7 @@ __JUnit 5__ as testing framework. Project included controller-, mapper-, reposit
 __DBRider__ as framework for testing with own h2 dataset (with data.yml).
 
 __Swagger__ to document API. Access on: <a href="http://localhost:8080/swagger-ui/index.html">link</a>.
-## You can simlpy run this application and interact with it using Postman
+## You can simlpy run this application and interact with it using url`s
 method |	functionality |	url |	request body
 --- | --- | --- | ---
 GET |	get all regions |	http://localhost:8080/api/regions |	N/A
