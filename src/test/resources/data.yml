@@ -1,0 +1,31 @@
+regions:
+  - id: 1
+    name: "Belgorod"
+    short_name: "BEL"
+  - id: 2
+    name: "Bryansk"
+    short_name: "BRY"
+  - id: 3
+    name: "Vladimir"
+    short_name: "VLA"
+  - id: 4
+    name: "Voronezh"
+    short_name: "VOR"
+  - id: 5
+    name: "Ivanovo"
+    short_name: "IVA"
+  - id: 6
+    name: "Kaluga"
+    short_name: "KAL"
+  - id: 7
+    name: "Kostroma"
+    short_name: "KOS"
+  - id: 8
+    name: "Kursk"
+    short_name: "KUR"
+  - id: 9
+    name: "Lipets"
+    short_name: "LIP"
+  - id: 10
+    name: "Moscow"
+    short_name: "MOS"
