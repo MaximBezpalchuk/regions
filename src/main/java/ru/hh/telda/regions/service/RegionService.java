@@ -57,8 +57,8 @@ public class RegionService {
         logger.debug("Check audience is unique");
         Optional<Region> existingRegionByName = regionMapper.getRegionByName(region.getName());
         Optional<Region> existingRegionByShortName = regionMapper.getRegionByShortName(region.getShortName());
-        if ((existingRegionByName.isPresent() && (existingRegionByName.get().getId() != region.getId()))
-            || (existingRegionByShortName.isPresent() && (existingRegionByShortName.get().getId() != region.getId()))) {
+        if ((existingRegionByName.isPresent() && (!existingRegionByName.get().getId().equals(region.getId())))
+            || (existingRegionByShortName.isPresent() && (!existingRegionByShortName.get().getId().equals(region.getId())))) {
             throw new EntityNotUniqueException(
                 "Region with name " + region.getName() + " or short name " + region.getShortName() + " is already exists!");
         }
