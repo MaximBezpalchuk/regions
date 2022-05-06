@@ -23,6 +23,8 @@
         <junit.version>5.8.2</junit.version>
         <mybatis.spring-boot.version>2.2.2</mybatis.spring-boot.version>
         <dbrider.version>1.15.2</dbrider.version>
+        <graphql-kickstart.version>11.0.0</graphql-kickstart.version>
+        <graphql.version>18.0</graphql.version>
     </properties>
 
     <dependencies>
@@ -87,6 +89,21 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-data-rest</artifactId>
             <version>${org.springdoc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-autoconfigure</artifactId>
+            <version>${graphql-kickstart.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphiql-spring-boot-starter</artifactId>
+            <version>${graphql-kickstart.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java</artifactId>
+            <version>${graphql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
