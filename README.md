@@ -33,3 +33,47 @@ You can use address <a href="http://localhost:8080/graphql">http://localhost:808
 
 Also, you can use UI on <a href="http://localhost:8080/graphiql">link</a> to check schema and sending queries with Documentation Explorer.
 
+For getting data you can use __allRegions__ (additionally with a filter by name and shortName) or __region__ queries: 
+
+```
+#Get all regions
+query{
+  allRegions(name: "gor", shortName: "B"){
+    id,
+    name,
+    shortName
+  }
+}
+
+#OR
+
+#Get one region by id
+query{
+  region(id: 1){
+    name
+  }
+}
+```
+
+For modifying data you can use __createRegion(name, shortName)__, __updateRegion(id, name, shortName)__ or __deleteRegion__ mutations:
+
+ ```
+#Create
+mutation {
+  createRegion(name: "AnyName", shortName: "ANY"){
+    id,
+    name,
+    shortName
+  }
+}
+
+#Update
+mutation {
+  updateRegion(id: 1, name: "bEeeee", shortName: "BEL")
+}
+
+#Delete
+mutation {
+  deleteRegion(id: 1)
+}
+ ```
