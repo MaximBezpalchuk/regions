@@ -35,9 +35,9 @@ public class RegionService {
             .orElseThrow(() -> new EntityNotFoundException("Can`t find any region with id: " + id));
     }
 
-    public void update(Region region) {
+    public Long update(Region region) {
         logger.debug("Save region");
-        regionMapper.updateRegion(region);
+        return regionMapper.updateRegion(region);
     }
 
     public Region save(Region region) {
@@ -48,17 +48,17 @@ public class RegionService {
         return region;
     }
 
-    public void delete(Long id) {
+    public Long delete(Long id) {
         logger.debug("Delete region with id: {}", id);
-        regionMapper.deleteRegion(id);
+        return regionMapper.deleteRegion(id);
     }
 
     private void uniqueCheck(Region region) {
         logger.debug("Check audience is unique");
         Optional<Region> existingRegionByName = regionMapper.getRegionByName(region.getName());
         Optional<Region> existingRegionByShortName = regionMapper.getRegionByShortName(region.getShortName());
-        if ((existingRegionByName.isPresent() && (existingRegionByName.get().getId() != region.getId()))
-            || (existingRegionByShortName.isPresent() && (existingRegionByShortName.get().getId() != region.getId()))) {
+        if ((existingRegionByName.isPresent() && (!existingRegionByName.get().getId().equals(region.getId())))
+            || (existingRegionByShortName.isPresent() && (!existingRegionByShortName.get().getId().equals(region.getId())))) {
             throw new EntityNotUniqueException(
                 "Region with name " + region.getName() + " or short name " + region.getShortName() + " is already exists!");
         }

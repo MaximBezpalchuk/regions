@@ -1,0 +1,16 @@
+type Region {
+id: ID!,
+name: String!,
+shortName: String!
+}
+
+type Query {
+allRegions(name: String, shortName: String): [Region]
+region(id: ID!): Region
+}
+
+type Mutation {
+createRegion(name: String!, shortName: String!): Region
+updateRegion(id: ID!, name: String!, shortName: String!): Int
+deleteRegion(id: ID!): Int
+}
